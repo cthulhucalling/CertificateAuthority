@@ -8,4 +8,4 @@ cp /etc/ssl/openssl.cnf /etc/CA
 touch /etc/CA/index.txt
 echo 01 > /etc/CA/serial
 openssl genrsa -aes256 -out /etc/CA/private/cakey.pem 4096
-openssl req -new -x509 -days 3650 -key /etc/CA/private/cakey.pem -sha256 -extensions v3_ca -out /etc/CA/certs/ca.crt -config /etc/CA/openssl.cnf
+openssl req -new -x509 -days 3650 -key /etc/CA/private/cakey.pem -sha256 -extensions /etc/CA/v3_ca -out /etc/CA/certs/ca.crt -config /etc/CA/openssl.cnf
