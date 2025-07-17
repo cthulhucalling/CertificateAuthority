@@ -249,8 +249,8 @@ basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 
 [ alt_names ]
-DNS.1 = gitlab.isrlabs.net
-IP.1 = 192.168.3.20
+DNS.1 = <hostname>
+IP.1 = <ip address>
 
 [ v3_ca ]
 
