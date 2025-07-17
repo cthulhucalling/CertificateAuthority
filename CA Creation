@@ -1,0 +1,11 @@
+## Create a new CA
+mkdir /etc/CA
+mkdir /etc/CA/certs
+mkdir /etc/CA/newcerts
+mkdir /etc/CA/private
+mkdir /etc/CA/crl
+cp /etc/ssl/openssl.cnf /etc/CA
+touch /etc/CA/index.txt
+echo 01 > /etc/CA/serial
+openssl genrsa -aes256 -out /etc/CA/private/cakey.pem 4096
+openssl req -new -x509 -days 3650 -key /etc/CA/private/cakey.pem -sha256 -extensions v3_ca -out /etc/CA/certs/ca.crt -config /etc/CA/openssl.cnf
