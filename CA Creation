@@ -11,7 +11,7 @@ openssl genrsa -aes256 -out /etc/CA/private/cakey.pem 4096
 openssl req -new -x509 -days 3650 -key /etc/CA/private/cakey.pem -sha256 -extensions /etc/CA/v3_ca -out /etc/CA/certs/ca.crt -config /etc/CA/openssl.cnf
 
 ##Request certificate with v3 extenstions
-openssl req -new -nodes -out gitlab.isrlabs.net.csr -newkey rsa:4096 -keyout gitlab.isrlabs.net.key -config openssl.cnf
+openssl req -new -nodes -out gitlab.isrlabs.net.csr -newkey rsa:4096 -keyout gitlab.isrlabs.net.key -config clientopenssl.cnf
 
 ##Sign CSR with v3 extensions
 openssl ca -in <requester>.csr -out <requester>.cer -config /etc/CA/openssl.cnf -extfile /etc/CA/v3_ext.conf
